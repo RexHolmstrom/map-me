@@ -24,7 +24,7 @@ const members = [
   },
 ];
 
-app.get("/api/members", (req, res) => {});
+app.get("/api/members", (req, res) => res.json(members));
 
 // Static
 
