@@ -6,7 +6,10 @@ const app = express();
 
 const logger = (req, res, next) => {
   console.log("test");
+  next();
 };
+
+app.use(logger);
 
 app.get("/api/members", (req, res) => res.json(members));
 
