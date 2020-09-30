@@ -5,7 +5,7 @@ const members = require("./Members");
 const app = express();
 
 const logger = (req, res, next) => {
-  console.log("test");
+  console.log(`${req.protocol}://${req.get("host")}${res.originalUrl}`);
   next();
 };
 
