@@ -5,9 +5,15 @@ const members = require("./Members");
 
 const app = express();
 
-app.use(logger);
+// app.use(logger);
 
 app.get("/api/members", (req, res) => res.json(members));
+
+//Single
+
+app.get("/api/members/:id", (req, res) => {
+  res.send(req.params.id);
+});
 
 // Static
 
