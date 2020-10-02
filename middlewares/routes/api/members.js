@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const members = require("./Members");
 
 router.get("/api/members", (req, res) => res.json(members));
 
@@ -16,3 +17,5 @@ router.get("/api/members/:id", (req, res) => {
       .json({ msg: `No member found with the id of ${req.params.id}` });
   }
 });
+
+module.exports = router;
