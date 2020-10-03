@@ -18,4 +18,9 @@ router.get("/:id", (req, res) => {
   }
 });
 
+//Creating
+router.post("/", (req, res) => {
+  res.send(req.send);
+});
+
 module.exports = router;
