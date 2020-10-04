@@ -6,8 +6,10 @@ const app = express();
 
 // app.use(logger);
 
-// Static
+//body parser
+app.use(express.json());
 
+// Static
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/members", require("./routes/api/members"));
