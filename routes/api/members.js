@@ -27,6 +27,12 @@ router.post("/", (req, res) => {
     email: req.body.email,
     status: "active",
   };
+
+  if (!newMember.name || !newMember.email) {
+    return res.status(400).json({ msg: "Please include, name and email! " });
+  }
+  members.push(newMember);
+  res.json(members);
 });
 
 module.exports = router;
