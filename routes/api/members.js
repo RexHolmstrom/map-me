@@ -1,4 +1,5 @@
 const express = require("express");
+const uuid = require("uuid");
 const router = express.Router();
 const members = require("../../Members");
 
@@ -20,7 +21,12 @@ router.get("/:id", (req, res) => {
 
 //Creating
 router.post("/", (req, res) => {
-  res.send(req.send);
+  const newMember = {
+    id: uuid.v4(),
+    name: req.body.name,
+    email: req.body.email,
+    status: "active",
+  };
 });
 
 module.exports = router;
