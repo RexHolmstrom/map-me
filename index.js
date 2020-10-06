@@ -1,11 +1,15 @@
 const express = require("express");
 const path = require("path");
+const exphbs = require("express-handlebars");
 const logger = require("./middlewares/logger");
 
 const app = express();
 
 // app.use(logger);
 
+//Handlebars
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 //body parser
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
