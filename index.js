@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Route to homepage
 
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
   res.render("index");
 });
 
