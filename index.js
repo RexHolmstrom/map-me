@@ -14,6 +14,9 @@ app.set("view engine", "handlebars");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Route to homepage
+app.get("/", (req, res) => res.render("index"));
+
 // Static
 app.use(express.static(path.join(__dirname, "public")));
 
